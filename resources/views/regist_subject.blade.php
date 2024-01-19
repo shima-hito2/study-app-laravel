@@ -1,6 +1,6 @@
 <?php
 
-echo $_POST['test'];
+dd($_POST);
 
 // $array = [
 //     [

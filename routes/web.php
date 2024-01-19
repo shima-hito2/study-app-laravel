@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('sample');
 });
 
-Route::post('/regist', function () {
-    return view('regist_subject');
-});
+// Route::post('/regist', function () {
+//     return view('regist_subject');
+// });
+
+Route::post('/regist', 'App\Http\Controllers\TasksController@create')->name('tasks_create');
