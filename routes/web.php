@@ -14,12 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('sample');
+Route::group(['middleware' => ['api', 'cors']], function () {
+    Route::get('/', function () {
+        return view('sample');
+    });
+
+    // Route::post('/regist', function () {
+    //     return view('regist_subject');
+    // });
+
+    Route::post('/registTask', 'App\Http\Controllers\TasksController@create')->name('tasks_create');
+    Route::post('/registSubject', 'App\Http\Controllers\SubjectMasterController@create')->name('subjectmaster_create');
+    Route::get('/getSubjectAll', 'App\Http\Controllers\SubjectMasterController@getAll')->name('subjectmaster_getAll');
+    Route::get('/getSubjectById', 'App\Http\Controllers\SubjectMasterController@getById')->name('subjectmaster_getById');
+    Route::post('/deleteSubject', 'App\Http\Controllers\SubjectMasterController@delete')->name('subjectmaster_delete');
 });
-
-// Route::post('/regist', function () {
-//     return view('regist_subject');
-// });
-
-Route::post('/regist', 'App\Http\Controllers\TasksController@create')->name('tasks_create');

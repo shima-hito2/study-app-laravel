@@ -20,7 +20,11 @@ class TasksController extends Controller
         $tasks->title = $request->title;
         $tasks->detail = $request->detail;
         $tasks->code = $request->code;
+        $tasks->style = $request->style;
+        $tasks->subject_id = $request->subject_id;
         $tasks->save();
-        return redirect('/');
+        return;
+        // dd($request);
+        // return redirect('http://localhost:3000/admin/regist');
     }
 }

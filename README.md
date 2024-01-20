@@ -17,3 +17,16 @@ php artisan make:controller Controller
 # モデル作成
 php artisan make:model モデル名<ExampleName>
 php artisan make:model 
+
+
+# モデル名が複数形になる対策
+例）SubjectMaster
+class SubjectMaster extends Model
+{
+    /**
+     * モデルと関連しているテーブル
+     *
+     * @var string
+     */
+    protected $table = 'subject_master'; // ここで任意の名前を設定
+}

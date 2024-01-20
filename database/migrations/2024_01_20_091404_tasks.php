@@ -12,10 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id()->comment('ID');
-            $table->string('title')->unique()->comment('タイトル');
+            $table->bigIncrements('id');
+            $table->string('title')->comment('タイトル');
             $table->text('detail')->comment('詳細説明');
             $table->text('code')->comment('コード');
+            $table->text('style')->comment('スタイル');
+            $table->bigInteger('subject_id')->unsigned()->comment('科目ID'); // 変更
+            $table->foreign('subject_id')->references('id')->on('subject_master');
             $table->timestamps();
         });
     }
