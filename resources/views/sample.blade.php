@@ -13,32 +13,32 @@
         <input type='text' name='test' />
         <button type='submit'>送信</button>
     </form> --}}
-    <form method="POST" action='http://localhost:8888/deleteSubject'>
+    <form method="POST" action='http://localhost:8888/registTask'>
         <div>
             <h1 class='text-center font-bold '>新規作成</h1>
             <div class="mt-4">
                 <label for="title" />
-                <input id="title" class="" type="text" name="id" :value="old('name')" />
+                <textarea id="title" class="" type="text" name="title" :value="old('name')"></textarea>
             </div>
 
             <div class="mt-4">
                 <label for="detail" />
-                <input id="detail" type="text" name="detail" :value="old('email')" />
+                <textarea id="detail" type="text" name="detail" :value="old('email')"></textarea>
             </div>
 
             <div class="mt-4">
                 <label for="code" />
-                <input id="code" type="text" name="code" :value="old('email')" />
+                <textarea id="code" type="text" name="code" :value="old('email')"></textarea>
             </div>
 
             <div class="mt-4">
                 <label for="style" />
-                <input id="style" type="text" name="style" :value="old('email')" />
+                <textarea id="style" type="text" name="style" :value="old('email')"></textarea>
             </div>
 
             <div class="mt-4">
                 <label for="subject_id" />
-                <input id="subject_id" type="text" name="subject_id" :value="old('email')" />
+                <textarea id="subject_id" type="text" name="subject_id" :value="old('email')"></textarea>
             </div>
 
             <div class="flex items-center justify-center my-4">

@@ -25,6 +25,8 @@ Route::group(['middleware' => ['api', 'cors']], function () {
 
     Route::post('/registTask', 'App\Http\Controllers\TasksController@create')->name('tasks_create');
     Route::post('/registSubject', 'App\Http\Controllers\SubjectMasterController@create')->name('subjectmaster_create');
+    Route::get('/getTasksById', 'App\Http\Controllers\TasksController@getById')->name('tasks_getById');
+    Route::get('/getTasksBySubjectId', 'App\Http\Controllers\TasksController@getBySubjectId')->name('tasks_getBySubjectId');
     Route::get('/getSubjectAll', 'App\Http\Controllers\SubjectMasterController@getAll')->name('subjectmaster_getAll');
     Route::get('/getSubjectById', 'App\Http\Controllers\SubjectMasterController@getById')->name('subjectmaster_getById');
     Route::post('/deleteSubject', 'App\Http\Controllers\SubjectMasterController@delete')->name('subjectmaster_delete');

@@ -16,6 +16,7 @@ class TasksController extends Controller
 
     public function create(Request $request)
     {
+        // dd($request);
         $tasks = new Tasks();
         $tasks->title = $request->title;
         $tasks->detail = $request->detail;
@@ -26,5 +27,21 @@ class TasksController extends Controller
         return;
         // dd($request);
         // return redirect('http://localhost:3000/admin/regist');
+    }
+
+    public function getById(Request $request)
+    {
+        $Tasks = new Tasks();
+        $item = $Tasks::find((int)$request->id);
+
+        return $item;
+    }
+
+    public function getBySubjectId(Request $request)
+    {
+        $Tasks = new Tasks();
+        $item = $Tasks::whereSubjectId((int)$request->id)->get();
+
+        return $item;
     }
 }
