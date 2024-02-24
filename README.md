@@ -30,3 +30,6 @@ class SubjectMaster extends Model
      */
     protected $table = 'subject_master'; // ここで任意の名前を設定
 }
+
+# swaggerのファイルを明示的に作成するコマンド(エラーがない場合は保存で自動作成される)
+php artisan l5-swagger:generate

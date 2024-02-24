@@ -1,0 +1,161 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your System Name",
+        "description": "Sample system",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/getSubjectAll": {
+            "get": {
+                "tags": [
+                    "科目マスタ"
+                ],
+                "summary": "科目マスタ全権取得",
+                "operationId": "getSubjectAll",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubjectMaster"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getSubjectById": {
+            "get": {
+                "tags": [
+                    "科目マスタ"
+                ],
+                "summary": "IDに紐づく科目マスタ取得",
+                "operationId": "getSubjectById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "検索する科目ID",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubjectMaster"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/registUser": {
+            "post": {
+                "tags": [
+                    "ユーザー"
+                ],
+                "summary": "ユーザー新規登録",
+                "operationId": "registUser",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "description": "メールアドレス",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "パスワード",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubjectMaster"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getUserById": {
+            "get": {
+                "tags": [
+                    "ユーザー"
+                ],
+                "summary": "アドレスに紐づくユーザー取得",
+                "operationId": "getUserById",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "メールアドレス",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubjectMaster"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SubjectMaster": {
+                "title": "SubjectMaster",
+                "properties": {
+                    "id": {
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "bigint(20)",
+                        "example": "1"
+                    },
+                    "name": {
+                        "description": "Name",
+                        "type": "string",
+                        "format": "varchar(255)",
+                        "example": "HTML"
+                    }
+                },
+                "type": "object"
+            },
+            "Users": {
+                "title": "Users"
+            }
+        }
+    }
+}

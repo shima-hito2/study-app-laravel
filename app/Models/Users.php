@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @OA\Schema(
- *     title="SubjectMaster"
+ *     title="Users"
  * )
  */
-class SubjectMaster extends Model
+class Users extends Model
 {
     /**
      *      @OA\Property(
@@ -30,6 +30,5 @@ class SubjectMaster extends Model
      *
      * @package App\Models
      */
-    protected $table = 'subject_master'; // ここで任意の名前を設定
     // use HasFactory;
 }
